@@ -12,7 +12,13 @@ class Todo extends React.Component {
     constructor(props){
         super(props); // porps 오브젝트 초기화
         this.state = {item: props.item}; // state는 리액트가 관리하는 오브젝트
+        this.delete = props.delete;
     }
+
+    deleteEventHandler = () => {
+        this.delete(this.state.item)
+    }
+
     render(){
         const item = this.state.item;
         return (
@@ -31,9 +37,11 @@ class Todo extends React.Component {
                 </ListItemText>
 
                 <ListItemSecondaryAction>
-                    <IconButton aria-label="Delete Todo">
-                        <DeleteOutlined />
-                    </IconButton>
+                    <IconButton
+                     aria-label="Delete Todo"
+                     onClick={this.deleteEventHandler}>
+                    <DeleteOutlined />
+                </IconButton>
                 </ListItemSecondaryAction>
             </ListItem>
         );
