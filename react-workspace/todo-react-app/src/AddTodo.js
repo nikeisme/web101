@@ -21,6 +21,14 @@ class AddTodo extends React.Component {
         this.setState({ item: {title: "" }});
     }
 
+    // Enter 키 처리를 위한 핸들러 작성
+
+    enterkeyEnventHandler = (e) => {
+        if (e.key === 'Enter') {
+            this.onButtonClick();
+        }
+    }
+
     render() {
         // (2) 함수 연결
         return(
@@ -32,6 +40,7 @@ class AddTodo extends React.Component {
                         fullWidth
                         onChange={this.onInputChange}
                         value={this.state.item.title}
+                        onKeyPress={this.enterkeyEnventHandler}
                     />
                 </Grid>
                 <Grid xs ={1} md={1} item>
