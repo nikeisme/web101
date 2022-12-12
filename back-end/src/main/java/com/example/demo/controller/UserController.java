@@ -29,6 +29,7 @@ public class UserController {
 
     private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
+    // 회원 가입
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO) {
         try {
@@ -54,6 +55,7 @@ public class UserController {
         }
     }
 
+    // 로그인
    @PostMapping("/signin")
     public ResponseEntity<?> authenticate
            (@RequestBody UserDTO userDTO) {
