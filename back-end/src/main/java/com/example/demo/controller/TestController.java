@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
-// 이 컨트롤러가 RestController임을 명시
+// 이 컨트롤러는 RestController임을 명시한다.
 // http와 관련된 코드 및 요청/응답 매핑을 스프링이 알아서 해준다.
 @RequestMapping("test") // 이 메서드의 리소스와 HTTP 메서드를 지정
 @RestController
